@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Prode {
     private final List<Participante> participantes;
-    private final Map<String, String> resultados;
+    private final Map<Partido, Pronosticos> resultados;
 
 
     public Prode() {
@@ -18,9 +18,12 @@ public class Prode {
         participantes.add(participante);
     }
 
-    public void agregarResultado(String partido, String resultado) {
-        resultados.put(partido, resultado);
+    public void agregarResultado(Partido partido, Pronosticos pronostico) {
+        resultados.put(partido, pronostico);
     }
+
+
+
 
 
 
@@ -32,7 +35,7 @@ public class Prode {
                 int pronostico = participante.getPuntos();
 
 //esta linea del for no le gusta al intellij
-                if (!Objects.equals(pronostico.getPronostico(), resultado)) {
+                if () {
                 } else {
                     int i = puntos++;
                 }
@@ -56,6 +59,8 @@ public class Prode {
             System.out.println(posicion + ". " + participante.getNombre() + ": " + participante.getPuntos() + " puntos");
             posicion++;
         }
+    }
+
     }
 }
 
