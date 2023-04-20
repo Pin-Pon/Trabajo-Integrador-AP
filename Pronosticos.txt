@@ -1,0 +1,6 @@
+Boca;Gana1;Empate;Gana2;River
+Fontana;Gana1;Empate;Gana2;Tirol
+Argentina;Gana1;Empate;Gana2;Polonia
+Francia;Gana1;Empate;Gana2;Croacia
+Chile;Gana1;Empate;Gana2;Paraguay
+Uruguay;Gana1;Empate;Gana2;Brasil no entendeeeeeer

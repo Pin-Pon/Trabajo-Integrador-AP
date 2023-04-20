@@ -1,44 +1,41 @@
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
 public class Partido {
+    private String equipoLocal;
+    private String equipoVisitante;
+    private String resultado;
+    private int fecha;
 
-    private int equipo1Goles;
-    private int equipo2Goles;
-
-    public Partido(int equipo1Goles, int equipo2Goles) {
-        this.equipo1Goles = equipo1Goles;
-        this.equipo2Goles = equipo2Goles;
+    public Partido(String equipoLocal, String equipoVisitante, int fecha) {
+        this.equipoLocal = equipoLocal;
+        this.equipoVisitante = equipoVisitante;
+        this.fecha = fecha;
     }
 
-    public int getEquipo1Goles() {
-        return equipo1Goles;
+    public String getEquipoLocal() {
+        return equipoLocal;
     }
 
-    public void setEquipo1Goles(int equipo1Goles) {
-        this.equipo1Goles = equipo1Goles;
+    public String getEquipoVisitante() {
+        return equipoVisitante;
     }
 
-    public int getEquipo2Goles() {
-        return equipo2Goles;
+    public String getResultado() {
+        return resultado;
     }
 
-    public void setEquipo2Goles(int equipo2Goles) {
-        this.equipo2Goles = equipo2Goles;
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
     }
 
-    @Override
-    public String toString() {
-        return "Partido{" +
-                "equipo1Goles=" + equipo1Goles +
-                ", equipo2Goles=" + equipo2Goles +
-                '}';
+    public int getFecha() {
+        return fecha;
     }
-
-
-    Equipo equipo1 = new Equipo("Fontana","Los tanineros del barrio");
-    Equipo equipo2 = new Equipo("Tirol", "Están todos locos");
-
-
-
-
-
-
 }
