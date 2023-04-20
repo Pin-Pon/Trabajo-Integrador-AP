@@ -29,9 +29,11 @@ public class Prode {
             int puntos = 0;
             for (String partido : resultados.keySet()) {
                 String resultado = resultados.get(partido);
-                ResultadoPartidos pronostico;
-                participante.getPuntos( ; int);
-                if (pronostico != null && pronostico.getResultado().equals(resultado)) {
+                int pronostico = participante.getPuntos();
+
+//esta linea del for no le gusta al intellij
+                if (!Objects.equals(pronostico.getPronostico(), resultado)) {
+                } else {
                     int i = puntos++;
                 }
             }
