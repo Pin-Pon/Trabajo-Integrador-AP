@@ -1,9 +1,11 @@
+import lombok.ToString;
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.*;
-
+@ToString
 public class Prode {
     private final List<Participante> participantes;
     private final Map<Partido, Pronosticos> resultados;
@@ -24,7 +26,7 @@ public class Prode {
 
 
 
-
+    /**
 
 
     public void calcularPuntos() {
@@ -60,7 +62,9 @@ public class Prode {
             posicion++;
         }
     }
+     */
 
     }
-}
+
+
 

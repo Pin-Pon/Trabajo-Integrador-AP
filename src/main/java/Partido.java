@@ -5,7 +5,7 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+@ToString
 
 public class Partido {
     private String equipoLocal;
@@ -38,4 +38,26 @@ public class Partido {
     public int getFecha() {
         return fecha;
     }
+
+    public Pronosticos getResultado() {
+        return resultado;
+    }
+
+    public void setEquipoLocal(String equipoLocal) {
+        this.equipoLocal = equipoLocal;
+    }
+
+    public void setEquipoVisitante(String equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
+    }
+
+    public void setResultado(Pronosticos resultado) {
+        this.resultado = resultado;
+    }
+
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
+    }
+
+
 }
