@@ -7,7 +7,7 @@ import lombok.ToString;
 //@Getter
 //@Setter
 @ToString
-
+//HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
 public class Participante {
     private String nombre;
 

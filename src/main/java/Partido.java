@@ -12,7 +12,7 @@ public class Partido {
     private String equipoVisitante;
     private Pronosticos resultado;
     private int fecha;
-
+//HAY QUE CABIAR EL TOsTRING SE VE MUY FEO TODO
     public Partido(String equipoLocal, String equipoVisitante, Pronosticos resultado, int fecha) {
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
