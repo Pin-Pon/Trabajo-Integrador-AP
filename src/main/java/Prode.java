@@ -28,24 +28,42 @@ public class Prode {
 
     public void mostrarResultados() {
         // Recorro la lista de participantes
+        // for (int i= 0 ; i<participantes.size()>; i++){
+        //   System.out.println(" Estoy probando el for :" + participantes.get(i));
         for (Participante participante : this.participantes) {
+            int puntosMayor= Integer.MAX_VALUE;
             int puntos = 0;
+            String nom = participante.getNombre();
 
-            System.out.println("Resultados para " + participante.getNombre() + ":");
+            System.out.println("Resultados para " + nom + ":");
             // Recorro el mapa de resultados
             for (Map.Entry<Partido, Pronosticos> entry : resultados.entrySet()) {
                 Partido partido = entry.getKey();
                 Pronosticos pronosticos = entry.getValue();
                 //Comparo los resultados
                 if (partido.getResultado() == participante.getMi_pronostico()) {
+
+                    if (participante.getFecha() == (partido.getFecha()))
                     puntos++;
+
+
+                    System.out.println("Felicitaciones usted  a ganado un punto");
+                    System.out.println(partido.getEquipoLocal() + " vs " + partido.getEquipoVisitante() + " - " + participante.getMi_pronostico());
+                    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("Puntos: " + puntos);
                 }
-                System.out.println("Felicitaciones usted a ");
-                System.out.println(partido.getEquipoLocal() + " vs " + partido.getEquipoVisitante() + " - " + participante.getMi_pronostico());
+                else
+                    System.out.println("No Gano nada vuelva a participar");
+                    System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+
+
+
+
+                System.out.println("El jugador con más puntos es:  " + participante.getNombre() + " " + puntosMayor);
             }
-            System.out.println("Puntos: " + puntos);
         }
     }
+}
 
 
 
@@ -75,7 +93,7 @@ public class Prode {
      **/
 
 
-}
+
 
 
 

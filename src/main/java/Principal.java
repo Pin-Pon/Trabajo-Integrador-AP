@@ -4,24 +4,24 @@ public class Principal {
         Participante participante1 = new Participante("Juan", Pronosticos.EMPATE, 1);
         Participante participante2 = new Participante("María", Pronosticos.LOCAL_GANO, 2);
         Participante participante3 = new Participante("Mario", Pronosticos.VISITANTE_GANO, 3);
-        Participante participante4 = new Participante("Pupa", Pronosticos.EMPATE, 3);
-        Participante participante5 = new Participante("Tamara", Pronosticos.LOCAL_GANO, 3);
-        Participante participante6 = new Participante("Roberto", Pronosticos.VISITANTE_GANO, 3);
-        Participante participante7 = new Participante("Sofia", Pronosticos.EMPATE, 3);
-        Participante participante8 = new Participante("Mamita", Pronosticos.LOCAL_GANO, 3);
+        Participante participante4 = new Participante("Pupa", Pronosticos.EMPATE, 4);
+        Participante participante5 = new Participante("Tamara", Pronosticos.LOCAL_GANO, 5);
+        Participante participante6 = new Participante("Roberto", Pronosticos.VISITANTE_GANO, 6);
+        Participante participante7 = new Participante("Sofia", Pronosticos.EMPATE, 7);
+        Participante participante8 = new Participante("Mamita", Pronosticos.LOCAL_GANO, 8);
 
 
-        Partido fecha1 = new Partido("Boca", "RiT", Pronosticos.LOCAL_GANO, 1);
-        Partido fecha2 = new Partido("oca", "RiL", Pronosticos.EMPATE, 2);
-        Partido fecha3 = new Partido("ca", "RiP", Pronosticos.VISITANTE_GANO, 3);
-        Partido fecha4 = new Partido("Roca", "RiD", Pronosticos.EMPATE, 4);
-        Partido fecha5 = new Partido("Poca", "RiM", Pronosticos.EMPATE, 5);
-        Partido fecha6 = new Partido("Loca", "RNi", Pronosticos.VISITANTE_GANO,6);
-        Partido fecha7 = new Partido("Toca", "RiC", Pronosticos.LOCAL_GANO, 7);
-        Partido fecha8 = new Partido("Moca", "RiX", Pronosticos.EMPATE, 8);
+        Partido fecha1 = new Partido("Boca", "Francia", Pronosticos.LOCAL_GANO, 1);
+        Partido fecha2 = new Partido("River", "Paris", Pronosticos.EMPATE, 2);
+        Partido fecha3 = new Partido("Tirol", "Angela", Pronosticos.VISITANTE_GANO, 3);
+        Partido fecha4 = new Partido("Roca", "Fontana", Pronosticos.EMPATE, 4);
+        Partido fecha5 = new Partido("Fontana", "Roca", Pronosticos.EMPATE, 5);
+        Partido fecha6 = new Partido("Angela", "Tirol", Pronosticos.VISITANTE_GANO,6);
+        Partido fecha7 = new Partido("Paris", "River", Pronosticos.LOCAL_GANO, 7);
+        Partido fecha8 = new Partido("Francia", "Boca", Pronosticos.EMPATE, 8);
 
 
-        // Crear competencia y agregar participantes
+        //
 
         //        this.participantes = new ArrayList<>(); llamo al constructor que me crea una lista de
         //        this.resultados = new HashMap<>();participantes y map con resultados
