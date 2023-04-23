@@ -8,20 +8,22 @@ import java.util.HashMap;
 //@ToString
 
 public class Partido {
-    private int fecha;
+
     private String equipoLocal;
 
     private String equipoVisitante;
+    private int fecha;
     private Pronosticos resultado;
 
 //HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
 
-    public Partido(int fecha, String equipoLocal, String equipoVisitante, Pronosticos resultado) {
-        this.fecha = fecha;
+    public Partido(String equipoLocal, String equipoVisitante, int fecha, Pronosticos resultado) {
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
+        this.fecha = fecha;
         this.resultado = resultado;
     }
+
 
     // public Partido(String equipoLocal, String equipoVisitante,Pronosticos resultado, int fecha) {
    //     this.equipoLocal = equipoLocal;

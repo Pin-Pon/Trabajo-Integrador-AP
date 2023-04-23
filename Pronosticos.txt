@@ -1,6 +1,8 @@
-Boca;Gana1;Empate;Gana2;River
-Fontana;Gana1;Empate;Gana2;Tirol
-Argentina;Gana1;Empate;Gana2;Polonia
-Francia;Gana1;Empate;Gana2;Croacia
-Chile;Gana1;Empate;Gana2;Paraguay
-Uruguay;Gana1;Empate;Gana2;Brasil no entendeeeeeer
+1;Juan;EMPATE
+2;Maria;LOCAL_GANO
+3;Mario;VISITANTE_GANO
+4;Pupa;EMPATE
+5;Tamara;LOCAL_GANO
+6;Roberto;VISITANTE_GANO
+7;Sofia;EMPATE
+8;Mamita;LOCAL_GANO

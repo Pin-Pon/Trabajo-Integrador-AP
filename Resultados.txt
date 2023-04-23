@@ -1,9 +1,9 @@
 
-1; Francia;Boca;LOCAL_GANO
-2; Paris;River;EMPATE
-3; Angela;Tirol;VISITANTE_GANO
-4; Fontana;  Roca;EMPATE
-5; Roca; Fontana;EMPATE
-6; "Tirol"; "Angela";VISITANTE_GANO
-7; "River";"Paris" ;LOCAL_GANO
-8; "Boca"; "Francia";EMPATE
+ Francia;Boca;1;LOCAL_GANO
+ Paris;River;2;EMPATE
+ Angela;Tirol;3;VISITANTE_GANO
+ Fontana;Roca;4;EMPATE
+ Roca;Fontana;5;EMPATE
+ Tirol;Angela;6;VISITANTE_GANO
+ River;Paris;7;LOCAL_GANO
+ Boca;Francia;8;EMPATE
