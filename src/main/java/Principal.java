@@ -84,18 +84,22 @@ public class Principal {
     Path archivo = Paths.get(b);
     Scanner sc = new Scanner(archivo);
     sc.useDelimiter("[;\\n\\r]+");
+    //sc.useDelimiter("[;\\n\\r]");
+    //sc.useDelimiter("[;\\n]" );
     Campeonato campeonatoNuevo = new Campeonato();
+
         while (sc.hasNextInt()) {
         int fecha = sc.nextInt();
         String local = sc.next();
         String visitante = sc.next();
-        resultado= sc.next();
+        Pronosticos resultado = Pronosticos.valueOf(sc.next());
+
 
 
             //String linea = lector.nextLine();  otro metodo!!
         //linea.split(";") split devuelve un vector
 
-        Partido nuevo = new Partido(fecha,local,visitante,resultado);
+        Partido nuevo = new Partido(fecha,local,visitante,Pronosticos.valueOf(String.valueOf(resultado)));
         campeonatoNuevo.agregarPartido(nuevo);
 
         System.out.println(nuevo);
