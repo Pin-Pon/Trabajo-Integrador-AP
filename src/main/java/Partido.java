@@ -5,14 +5,25 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-@ToString
+//@ToString
 
 public class Partido {
     private String equipoLocal;
+
+    @Override
+    public String toString() {
+        return "Partido: \n" +
+                "Equipo Local: " + equipoLocal + '\n' +
+                "Equipo Visitante: '" + equipoVisitante + '\n' +
+                "*******************************************" + '\n' +
+                "Resultado: " + resultado + '\n' +
+                "Fecha: " + fecha +'\n' ;
+    }
+
     private String equipoVisitante;
     private Pronosticos resultado;
     private int fecha;
-//HAY QUE CABIAR EL TOsTRING SE VE MUY FEO TODO
+//HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
     public Partido(String equipoLocal, String equipoVisitante, Pronosticos resultado, int fecha) {
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;

@@ -1,9 +1,13 @@
+import static java.lang.Integer.MAX_VALUE;
+
 public class Principal {
     public static void main(String[] args) {
+
         // Crear participantes
         Participante participante1 = new Participante("Juan", Pronosticos.EMPATE, 1);
         Participante participante2 = new Participante("María", Pronosticos.LOCAL_GANO, 2);
         Participante participante3 = new Participante("Mario", Pronosticos.VISITANTE_GANO, 3);
+
         Participante participante4 = new Participante("Pupa", Pronosticos.EMPATE, 4);
         Participante participante5 = new Participante("Tamara", Pronosticos.LOCAL_GANO, 5);
         Participante participante6 = new Participante("Roberto", Pronosticos.VISITANTE_GANO, 6);
@@ -19,6 +23,8 @@ public class Principal {
         Partido fecha6 = new Partido("Angela", "Tirol", Pronosticos.VISITANTE_GANO,6);
         Partido fecha7 = new Partido("Paris", "River", Pronosticos.LOCAL_GANO, 7);
         Partido fecha8 = new Partido("Francia", "Boca", Pronosticos.EMPATE, 8);
+
+        participante3(Pronosticos.VISITANTE_GANO,"")
 
 
         //
@@ -45,7 +51,12 @@ public class Principal {
         campeonato.agregarResultado(fecha8, Pronosticos.VISITANTE_GANO);
         System.out.println(campeonato);
 
+       // campeonato.mostrarResultados();
         campeonato.mostrarResultados();
+        System.out.println("Este es el ganador con mayor puntaje: \n" + campeonato.obtenerGanador());
+        campeonato.obtenerGanador();
+
+
 
     }
 

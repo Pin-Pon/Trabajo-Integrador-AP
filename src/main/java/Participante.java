@@ -6,7 +6,7 @@ import lombok.ToString;
 //@AllArgsConstructor
 //@Getter
 //@Setter
-@ToString
+//@ToString
 //HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
 public class Participante {
     private String nombre;
@@ -44,6 +44,13 @@ public class Participante {
         this.nombre = nombre;
     }
 
+    @Override
+    public String toString() {
+        return "********Participante************ \n" +
+                "Nombre: " + nombre + '\n' +
+                "Mi pronostico: " + mi_pronostico + '\n' +
+                "Fecha: " + fecha + '\n' ;
+    }
 
 
     //HACER EL METODO DE AGREGAR RESULTADO AL MAP

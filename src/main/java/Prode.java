@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.*;
-@ToString
+//@ToString
 //HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
 public class Prode {
     private final List<Participante> participantes;
@@ -31,7 +31,7 @@ public class Prode {
         // for (int i= 0 ; i<participantes.size()>; i++){
         //   System.out.println(" Estoy probando el for :" + participantes.get(i));
         for (Participante participante : this.participantes) {
-            int puntosMayor= Integer.MAX_VALUE;
+
             int puntos = 0;
             String nom = participante.getNombre();
 
@@ -47,23 +47,56 @@ public class Prode {
                     puntos++;
 
 
-                    System.out.println("Felicitaciones usted  a ganado un punto");
+                   // System.out.println("Felicitaciones usted  a ganado un punto");
                     System.out.println(partido.getEquipoLocal() + " vs " + partido.getEquipoVisitante() + " - " + participante.getMi_pronostico());
                     System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                     System.out.println("Puntos: " + puntos);
                 }
                 else
-                    System.out.println("No Gano nada vuelva a participar");
-                    System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+                    System.out.println("Fecha:"+ partido.getFecha() + " " + "En esta ronda no obtuvo puntos");
+                    System.out.println("******************************");
 
 
-
-
-                System.out.println("El jugador con más puntos es:  " + participante.getNombre() + " " + puntosMayor);
-            }
+                    }
         }
     }
+    public Participante obtenerGanador() {
+        Participante ganador = null;
+        int maxPuntos = Integer.MIN_VALUE;
+
+        for (Participante participante : this.participantes) {
+            int puntos = 0;
+
+            for (Map.Entry<Partido, Pronosticos> entry : resultados.entrySet()) {
+                Partido partido = entry.getKey();
+                Pronosticos pronosticos = entry.getValue();
+
+                if (partido.getResultado() == participante.getMi_pronostico()) {
+                    if (participante.getFecha() == (partido.getFecha()))
+                        puntos++;
+
+                }
+            }
+
+            if (puntos > maxPuntos) {
+                maxPuntos = puntos;
+                ganador = participante;
+                System.out.println("Puntos obtenidos: " + puntos);
+            }
+        }
+
+        return  ganador;
+    }
+
+    @Override
+    public String toString() {
+        return "Prode " + '\n' +
+                "participantes: " + participantes + '\n' +
+                ", resultados: " + resultados ;
+    }
 }
+
+
 
 
 
