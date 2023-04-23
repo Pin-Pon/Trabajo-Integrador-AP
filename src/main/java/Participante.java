@@ -9,10 +9,11 @@ import lombok.ToString;
 //@ToString
 //HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
 public class Participante {
+    private int fecha;
     private String nombre;
 
     private Pronosticos mi_pronostico;
-    private int fecha;
+
 
     public Pronosticos getMi_pronostico() {
         return mi_pronostico;
@@ -30,10 +31,10 @@ public class Participante {
         this.fecha = fecha;
     }
 
-    public Participante(String nombre, Pronosticos mi_pronostico, int fecha) {
+    public Participante(int fecha, String nombre, Pronosticos mi_pronostico) {
+        this.fecha = fecha;
         this.nombre = nombre;
         this.mi_pronostico = mi_pronostico;
-        this.fecha = fecha;
     }
 
     public String getNombre() {

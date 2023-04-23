@@ -8,28 +8,21 @@ import java.util.HashMap;
 //@ToString
 
 public class Partido {
+    private int fecha;
     private String equipoLocal;
-
-    @Override
-    public String toString() {
-        return "Partido: \n" +
-                "Equipo Local: " + equipoLocal + '\n' +
-                "Equipo Visitante: '" + equipoVisitante + '\n' +
-                "*******************************************" + '\n' +
-                "Resultado: " + resultado + '\n' +
-                "Fecha: " + fecha +'\n' ;
-    }
 
     private String equipoVisitante;
     private Pronosticos resultado;
-    private int fecha;
+
 //HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
-    public Partido(String equipoLocal, String equipoVisitante, Pronosticos resultado, int fecha) {
+
+    public Partido(int fecha, String equipoLocal, String equipoVisitante, Pronosticos resultado) {
+        this.fecha = fecha;
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.resultado = resultado;
-        this.fecha = fecha;
     }
+
     // public Partido(String equipoLocal, String equipoVisitante,Pronosticos resultado, int fecha) {
    //     this.equipoLocal = equipoLocal;
    //     this.equipoVisitante = equipoVisitante;
@@ -68,6 +61,17 @@ public class Partido {
 
     public void setFecha(int fecha) {
         this.fecha = fecha;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Partido: \n" +
+                "Equipo Local: " + equipoLocal + '\n' +
+                "Equipo Visitante: '" + equipoVisitante + '\n' +
+                "*******************************************" + '\n' +
+                "Resultado: " + resultado + '\n' +
+                "Fecha: " + fecha +'\n' ;
     }
 
 

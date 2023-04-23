@@ -26,6 +26,8 @@ public class Prode {
         resultados.put(partido, pronostico);
     }
 
+
+
     public void mostrarResultados() {
         // Recorro la lista de participantes
         // for (int i= 0 ; i<participantes.size()>; i++){

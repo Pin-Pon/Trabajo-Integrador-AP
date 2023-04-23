@@ -1,7 +1,9 @@
-Boca;0;River;0
-Fontana;4;Tirol;2
-Argentina;3;Polonia;2
-Francia;4;Croacia;2
-Chile;0;Paraguay;0
-Uruguay;2;Brasil;1
-Esta todo mal estooooooo
+
+1; "Francia"; "Boca";LOCAL_GANO
+2; "Paris"; "River";EMPATE
+3; "Angela";"Tirol" ;VISITANTE_GANO
+4; "Fontana";  "Roca";EMPATE
+5; "Roca"; "Fontana";EMPATE
+6; "Tirol"; "Angela";VISITANTE_GANO
+7; "River";"Paris" ;LOCAL_GANO
+8; "Boca"; "Francia";EMPATE

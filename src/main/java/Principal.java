@@ -1,31 +1,39 @@
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import static java.lang.Integer.MAX_VALUE;
 
 public class Principal {
-    public static void main(String[] args) {
+    public Principal() throws IOException {
+    }
 
+    public static void main(String[] args) throws IOException {
+/**
         // Crear participantes
-        Participante participante1 = new Participante("Juan", Pronosticos.EMPATE, 1);
-        Participante participante2 = new Participante("María", Pronosticos.LOCAL_GANO, 2);
-        Participante participante3 = new Participante("Mario", Pronosticos.VISITANTE_GANO, 3);
+        Participante participante1 = new Participante(1,"Juan", Pronosticos.EMPATE);
+        Participante participante2 = new Participante(2,"María", Pronosticos.LOCAL_GANO);
+        Participante participante3 = new Participante(3,"Mario", Pronosticos.VISITANTE_GANO);
 
-        Participante participante4 = new Participante("Pupa", Pronosticos.EMPATE, 4);
-        Participante participante5 = new Participante("Tamara", Pronosticos.LOCAL_GANO, 5);
-        Participante participante6 = new Participante("Roberto", Pronosticos.VISITANTE_GANO, 6);
-        Participante participante7 = new Participante("Sofia", Pronosticos.EMPATE, 7);
-        Participante participante8 = new Participante("Mamita", Pronosticos.LOCAL_GANO, 8);
+        Participante participante4 = new Participante(4,"Pupa", Pronosticos.EMPATE);
+        Participante participante5 = new Participante(5,"Tamara", Pronosticos.LOCAL_GANO);
+        Participante participante6 = new Participante(6,"Roberto", Pronosticos.VISITANTE_GANO);
+        Participante participante7 = new Participante(7,"Sofia", Pronosticos.EMPATE);
+        Participante participante8 = new Participante(8,"Mamita", Pronosticos.LOCAL_GANO);
 
 
-        Partido fecha1 = new Partido("Boca", "Francia", Pronosticos.LOCAL_GANO, 1);
-        Partido fecha2 = new Partido("River", "Paris", Pronosticos.EMPATE, 2);
-        Partido fecha3 = new Partido("Tirol", "Angela", Pronosticos.VISITANTE_GANO, 3);
-        Partido fecha4 = new Partido("Roca", "Fontana", Pronosticos.EMPATE, 4);
-        Partido fecha5 = new Partido("Fontana", "Roca", Pronosticos.EMPATE, 5);
-        Partido fecha6 = new Partido("Angela", "Tirol", Pronosticos.VISITANTE_GANO,6);
-        Partido fecha7 = new Partido("Paris", "River", Pronosticos.LOCAL_GANO, 7);
-        Partido fecha8 = new Partido("Francia", "Boca", Pronosticos.EMPATE, 8);
+        Partido fecha1 = new Partido(1, "Francia", "Boca", Pronosticos.LOCAL_GANO);
+        Partido fecha2 = new Partido(2, "Paris", "River", Pronosticos.EMPATE);
+        Partido fecha3 = new Partido(3, "Angela","Tirol" , Pronosticos.VISITANTE_GANO);
+        Partido fecha4 = new Partido(4, "Fontana",  "Roca",Pronosticos.EMPATE);
+        Partido fecha5 = new Partido(5, "Roca", "Fontana", Pronosticos.EMPATE);
+        Partido fecha6 = new Partido(6, "Tirol", "Angela",Pronosticos.VISITANTE_GANO);
+        Partido fecha7 = new Partido(7, "River","Paris" , Pronosticos.LOCAL_GANO);
+        Partido fecha8 = new Partido(8, "Boca", "Francia", Pronosticos.EMPATE);
 
-        participante3(Pronosticos.VISITANTE_GANO,"")
-
+        //
 
         //
 
@@ -59,7 +67,7 @@ public class Principal {
 
 
     }
-
+**/
         // Crear pronósticos y
         //System.out.println("");
         //Pronosticos pronostico1 = Pronosticos.LOCAL_GANO;
@@ -69,9 +77,41 @@ public class Principal {
 
        // Pronosticos pronostico = new Pronosticos();
         //Partido partido = new Partido("BOCA", "Tirol", pronostico, 1);
+    //
+    Scanner teclado = new Scanner(System.in);
+    System.out.println("INGRESE El ARCHIVO DE LOS PARTIDOS: ");
+    String b = teclado.nextLine();
+    Path archivo = Paths.get(b);
+    Scanner sc = new Scanner(archivo);
+    sc.useDelimiter("[;\\n\\r]+");
+    Campeonato campeonatoNuevo = new Campeonato();
+        while (sc.hasNextInt()) {
+        int fecha = sc.nextInt();
+        String local = sc.next();
+        String visitante = sc.next();
+        resultado= sc.next();
 
 
+            //String linea = lector.nextLine();  otro metodo!!
+        //linea.split(";") split devuelve un vector
+
+        Partido nuevo = new Partido(fecha,local,visitante,resultado);
+        campeonatoNuevo.agregarPartido(nuevo);
+
+        System.out.println(nuevo);
+        sc.close();
+    }
+    }
 }
+
+
+
+
+
+
+
+
+
 
 
 
