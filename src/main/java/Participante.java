@@ -47,7 +47,7 @@ public class Participante {
 
     @Override
     public String toString() {
-        return "********Participante************ \n" +
+        return "********Participantes************ \n" +
                 "Nombre: " + nombre + '\n' +
                 "Mi pronostico: " + mi_pronostico + '\n' +
                 "Fecha: " + fecha + '\n' ;

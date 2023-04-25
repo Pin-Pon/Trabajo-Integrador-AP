@@ -70,7 +70,7 @@ public class Partido {
     public String toString() {
         return "Partido: \n" +
                 "Equipo Local: " + equipoLocal + '\n' +
-                "Equipo Visitante: '" + equipoVisitante + '\n' +
+                "Equipo Visitante: " + equipoVisitante + '\n' +
                 "*******************************************" + '\n' +
                 "Resultado: " + resultado + '\n' +
                 "Fecha: " + fecha +'\n' ;

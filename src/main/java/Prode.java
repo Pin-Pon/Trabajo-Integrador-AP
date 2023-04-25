@@ -93,9 +93,11 @@ public class Prode {
     @Override
     public String toString() {
         return "Prode " + '\n' +
-                "participantes: " + participantes + '\n' +
-                ", resultados: " + resultados ;
+                "Participantes: " + participantes + '\n' +
+                "Resultados: " + resultados ;
     }
+
+
 }
 
 

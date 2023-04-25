@@ -1,4 +1,3 @@
-
  Francia;Boca;1;LOCAL_GANO
  Paris;River;2;EMPATE
  Angela;Tirol;3;VISITANTE_GANO

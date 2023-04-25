@@ -23,7 +23,7 @@ public class Principal {
        // Pronosticos pronostico = new Pronosticos();
         //Partido partido = new Partido("BOCA", "Tirol", pronostico, 1);
     //
-        /**
+
     Scanner teclado = new Scanner(System.in);
     System.out.println("INGRESE El ARCHIVO DE LOS PARTIDOS: ");
     String b = teclado.nextLine();
@@ -32,7 +32,7 @@ public class Principal {
     sc.useDelimiter("[;\\n\\r]+");
     //sc.useDelimiter("[;\\n\\r]");
     //sc.useDelimiter("[;\\n]" );
-    Campeonato campeonatoNuevo = new Campeonato();
+    //Partido partidoNuevo = new Partido();
 
         while (sc.hasNext()) {
         String local = sc.next();
@@ -40,13 +40,15 @@ public class Principal {
         int fecha = sc.nextInt();
         Pronosticos resultado = Pronosticos.valueOf(sc.next());
         Partido nuevo = new Partido(local,visitante,fecha,Pronosticos.valueOf(String.valueOf(resultado)));
-        campeonatoNuevo.agregarPartido(nuevo);
+        //partidoNuevo.agregarPartido(nuevo);
 
         System.out.println(nuevo);
 
     }
         sc.close();
 
+        System.out.println("*************************************");
+        System.out.println("LECTURA ARCHIVO PRONOSTICOS.TXT");
         Scanner teclado2 = new Scanner(System.in);
         System.out.println("INGRESE El ARCHIVO DE LOS Pronósticos: ");
         String bb = teclado.nextLine();
@@ -57,12 +59,24 @@ public class Principal {
         //sc.useDelimiter("[;\\n]" );
         Prode prodeNuevo = new Prode();
 
-        while (sc2.hasNext()) {
+        while (sc2.hasNextInt()) {
+            int participanteFecha = sc2.nextInt();
+            String participanteNombre = sc2.next();
+            Pronosticos participanteResultados = Pronosticos.valueOf(sc2.next());
+            String equipoLocal = sc2.next();
+            String equipoVisitante = sc2.next();
+            int fechaPartido = sc2.nextInt();
+            Pronosticos resultadoPartido = Pronosticos.valueOf(sc2.next());
+            Participante otroMas = new Participante(participanteFecha,participanteNombre,Pronosticos.valueOf(String.valueOf(participanteResultados)));
+            prodeNuevo.agregarParticipante(otroMas);
+            Partido partidoNuevo = new Partido(equipoLocal,equipoVisitante,fechaPartido,resultadoPartido);
+            prodeNuevo.agregarResultado(partidoNuevo,Pronosticos.valueOf(String.valueOf(resultadoPartido)));
+            //prodeNuevo.agregarResultado(equipoVisitante,equipoLocal,fechaPartido, Pronosticos.valueOf(String.valueOf(resultadoPartido)));
 
-            String nombre = sc.next();
-            String resultados = sc.next();
-            int fecha = sc.nextInt();
-            Pronosticos resultado = Pronosticos.valueOf(sc.next());
+
+            System.out.println(prodeNuevo);
+            System.out.println("El ganador es: ");
+            System.out.println(prodeNuevo.obtenerGanador());
 
 
 
@@ -71,11 +85,11 @@ public class Principal {
 
 
 
-            System.out.println();
+
 
         }
         sc.close();
-**/
+        //CONEXIÓN CON LA BASE DE DATOS...
         //ESTABLECER LA CONEXION
         Connection conector = DriverManager.getConnection("jdbc:mysql://localhost/Resultados", "root", "Placer2022");
 
