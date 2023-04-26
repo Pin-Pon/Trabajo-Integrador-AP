@@ -23,36 +23,35 @@ public class Prode {
         resultados.put(partido, pronostico);
     }
 
-
-
     public void mostrarResultados() {
-
+        //  Crear un map clave String valor int...
+        HashMap<String, Integer> rondaParticipante = new HashMap<>();
         for (Participante participante : this.participantes) {
             int puntos = 0;
             String nom = participante.getNombre();
-
-            System.out.println("Resultados para " + nom + ":");
+            Integer pronosticosParticipante = participante.getFecha();
+            //System.out.println("Resultados para " + nom + ":");
             // Recorro el mapa de resultados
             for (Map.Entry<Partido, Pronosticos> entry : resultados.entrySet()) {
                 Partido partido = entry.getKey();
                 Pronosticos pronosticos = entry.getValue();
                 //Comparo los resultados
-                if (partido.getResultado() == participante.getMi_pronostico()) {
-                    if (participante.getFecha() == (partido.getFecha()))
-                    puntos++;
-                   // System.out.println("Felicitaciones usted  a ganado un punto");
+                //Buscar en el map...el participante por nombre, obtener el valor y sumar uno
+                for (Map.Entry<String,Integer> entry1 : rondaParticipante.entrySet()) {
+                    nom = entry1.getKey();
+                    pronosticosParticipante = entry1.getValue();
+                    //
+                    if (partido.getResultado() == participante.getMi_pronostico()) {
+                        if (participante.getFecha() == (partido.getFecha()))
+                            puntos++;
+                            //System.out.println("Nombre del participante: " + nom + "Sus pronosticos: " + pronosticosParticipante + "Puntos obtenidos: " + puntos);
+                    }
+                    System.out.println("Nombre del participante: " + nom + "Sus pronosticos: " + pronosticosParticipante + "Puntos obtenidos: " + puntos);
                     System.out.println(partido.getEquipoLocal() + " vs " + partido.getEquipoVisitante() + " - " + participante.getMi_pronostico());
-                    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                     System.out.println("Puntos: " + puntos);
                 }
-                else
-                    System.out.println("Fecha:"+ partido.getFecha() + " " + "En esta ronda no obtuvo puntos");
-                    System.out.println("******************************");
-
-
-                    }
+            }
         }
-
     }
     public String obtenerGanador() {
         Participante ganador = null;

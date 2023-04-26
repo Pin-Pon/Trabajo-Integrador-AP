@@ -34,7 +34,7 @@ public class Participante {
         this.mi_pronostico = mi_pronostico;
     }
 
-    public String getNombre() {
+    public   String getNombre() {
         return nombre;
     }
 

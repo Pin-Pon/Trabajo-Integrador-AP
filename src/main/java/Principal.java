@@ -14,27 +14,28 @@ public class Principal {
     public static void main(String[] args) throws IOException, SQLException {
 
 
-    Scanner teclado = new Scanner(System.in);
-    System.out.println("INGRESE El ARCHIVO DE LOS PARTIDOS: ");
-    String b = teclado.nextLine();
-    Path archivo = Paths.get(b);
-    Scanner sc = new Scanner(archivo);
-    sc.useDelimiter("[;\\n\\r]+");
-    //sc.useDelimiter("[;\\n\\r]");
-    //sc.useDelimiter("[;\\n]" );
-    //Partido partidoNuevo = new Partido();
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("INGRESE El ARCHIVO DE LOS PARTIDOS: ");
+        String b = teclado.nextLine();
+        Path archivo = Paths.get(b);
+        Scanner sc = new Scanner(archivo);
+        sc.useDelimiter("[;\\n\\r]+");
+        //sc.useDelimiter("[;\\n\\r]");
+        //sc.useDelimiter("[;\\n]" );
+        //Partido partidoNuevo = new Partido();
+        Prode prodeNuevo = new Prode();
 
         while (sc.hasNext()) {
-        String local = sc.next();
-        String visitante = sc.next();
-        int fecha = sc.nextInt();
-        Pronosticos resultado = Pronosticos.valueOf(sc.next());
-        Partido nuevo = new Partido(local,visitante,fecha,Pronosticos.valueOf(String.valueOf(resultado)));
-        //partidoNuevo.agregarPartido(nuevo);
+            String local = sc.next();
+            String visitante = sc.next();
+            int fecha = sc.nextInt();
+            Pronosticos resultado = Pronosticos.valueOf(sc.next());
+            Partido nuevo = new Partido(local, visitante, fecha, Pronosticos.valueOf(String.valueOf(resultado)));
+            prodeNuevo.agregarResultado(nuevo, resultado);
 
-        System.out.println(nuevo);
+            System.out.println(prodeNuevo);
 
-    }
+        }
         sc.close();
 
         System.out.println("*************************************");
@@ -47,7 +48,7 @@ public class Principal {
         sc2.useDelimiter("[;\\n\\r]+");
         //sc.useDelimiter("[;\\n\\r]");
         //sc.useDelimiter("[;\\n]" );
-        Prode prodeNuevo = new Prode();
+        //Prode prodeNuevo = new Prode();
 
         while (sc2.hasNextInt()) {
             int participanteFecha = sc2.nextInt();
@@ -56,32 +57,30 @@ public class Principal {
             String equipoLocal = sc2.next();
             String equipoVisitante = sc2.next();
             int fechaPartido = sc2.nextInt();
-            Pronosticos resultadoPartido = Pronosticos.valueOf(sc2.next());
-            Participante otroMas = new Participante(participanteFecha,participanteNombre,Pronosticos.valueOf(String.valueOf(participanteResultados)));
+            //Pronosticos resultadoPartido = Pronosticos.valueOf(sc2.next());
+            Participante otroMas = new Participante(participanteFecha, participanteNombre, Pronosticos.valueOf(String.valueOf(participanteResultados)));
             prodeNuevo.agregarParticipante(otroMas);
-            Partido partidoNuevo = new Partido(equipoLocal,equipoVisitante,fechaPartido,resultadoPartido);
-            prodeNuevo.agregarResultado(partidoNuevo,Pronosticos.valueOf(String.valueOf(resultadoPartido)));
+            //Partido partidoNuevo = new Partido(equipoLocal,equipoVisitante,fechaPartido);
+            //prodeNuevo.agregarResultado(partidoNuevo,Pronosticos.valueOf(String.valueOf(resultadoPartido)));
             //prodeNuevo.agregarResultado(equipoVisitante,equipoLocal,fechaPartido, Pronosticos.valueOf(String.valueOf(resultadoPartido)));
 
 
-            System.out.println(prodeNuevo);
-
-
+            //System.out.println(prodeNuevo);
+            System.out.println("Muestro los resultados");
             prodeNuevo.mostrarResultados();
             System.out.println("El ganador es: ");
             System.out.println(prodeNuevo.obtenerGanador());
-
 
 
             //String linea = lector.nextLine();  otro metodo!!
             //linea.split(";") split devuelve un vector
 
 
-
-
-
         }
         sc.close();
+    }
+}
+        /**
         //CONEXIÓN CON LA BASE DE DATOS...
 
         //ESTABLECER LA CONEXION
@@ -115,10 +114,10 @@ public class Principal {
 
         }
 
+**/
 
 
 
-    }
 
 
 
