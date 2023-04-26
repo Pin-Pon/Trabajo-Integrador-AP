@@ -7,7 +7,7 @@ import lombok.ToString;
 //@Getter
 //@Setter
 //@ToString
-//HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
+
 public class Participante {
     private int fecha;
     private String nombre;
@@ -19,9 +19,6 @@ public class Participante {
         return mi_pronostico;
     }
 
-    public void setMi_pronostico(Pronosticos mi_pronostico) {
-        this.mi_pronostico = mi_pronostico;
-    }
 
     public int getFecha() {
         return fecha;

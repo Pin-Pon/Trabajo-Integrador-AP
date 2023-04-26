@@ -13,16 +13,6 @@ public class Principal {
 
     public static void main(String[] args) throws IOException, SQLException {
 
-        // Crear pronósticos y
-        //System.out.println("");
-        //Pronosticos pronostico1 = Pronosticos.LOCAL_GANO;
-       // Pronosticos pronostico2 = Pronosticos.EMPATE;
-        //Pronosticos pronostico3 = Pronosticos.VISITANTE_GANO;
-
-
-       // Pronosticos pronostico = new Pronosticos();
-        //Partido partido = new Partido("BOCA", "Tirol", pronostico, 1);
-    //
 
     Scanner teclado = new Scanner(System.in);
     System.out.println("INGRESE El ARCHIVO DE LOS PARTIDOS: ");
@@ -75,6 +65,9 @@ public class Principal {
 
 
             System.out.println(prodeNuevo);
+
+
+            prodeNuevo.mostrarResultados();
             System.out.println("El ganador es: ");
             System.out.println(prodeNuevo.obtenerGanador());
 
@@ -90,19 +83,18 @@ public class Principal {
         }
         sc.close();
         //CONEXIÓN CON LA BASE DE DATOS...
+
         //ESTABLECER LA CONEXION
         Connection conector = DriverManager.getConnection("jdbc:mysql://localhost/Resultados", "root", "Placer2022");
-
         System.out.println(conector.isClosed() + "" + "--> Ak Pregunto si está cerrada la conexión? ");
+
         //obtener una sentencia
         Statement st = conector.createStatement();
 
 
         //ejecutar la consulta
         ResultSet rs = st.executeQuery("select * from partidos");//traeme todas las columnas de la tabla de personas
-        //traeme todas las columnas
-        // de la tabla personas
-        //recorro la consulta
+
         while (rs.next()){
             int ronda = rs.getInt("fecha");
             String nomLocal = rs.getString("local");

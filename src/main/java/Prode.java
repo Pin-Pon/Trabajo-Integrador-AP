@@ -1,16 +1,13 @@
 import lombok.ToString;
-
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.*;
 //@ToString
-//HAY QUE CABIAR EL TOsTRING SE VE MUY FEO
 public class Prode {
     private final List<Participante> participantes;
     private final Map<Partido, Pronosticos> resultados;
-
 
     public Prode() {
         this.participantes = new ArrayList<>();
@@ -29,11 +26,8 @@ public class Prode {
 
 
     public void mostrarResultados() {
-        // Recorro la lista de participantes
-        // for (int i= 0 ; i<participantes.size()>; i++){
-        //   System.out.println(" Estoy probando el for :" + participantes.get(i));
-        for (Participante participante : this.participantes) {
 
+        for (Participante participante : this.participantes) {
             int puntos = 0;
             String nom = participante.getNombre();
 
@@ -44,11 +38,8 @@ public class Prode {
                 Pronosticos pronosticos = entry.getValue();
                 //Comparo los resultados
                 if (partido.getResultado() == participante.getMi_pronostico()) {
-
                     if (participante.getFecha() == (partido.getFecha()))
                     puntos++;
-
-
                    // System.out.println("Felicitaciones usted  a ganado un punto");
                     System.out.println(partido.getEquipoLocal() + " vs " + partido.getEquipoVisitante() + " - " + participante.getMi_pronostico());
                     System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -61,8 +52,9 @@ public class Prode {
 
                     }
         }
+
     }
-    public Participante obtenerGanador() {
+    public String obtenerGanador() {
         Participante ganador = null;
         int maxPuntos = Integer.MIN_VALUE;
 
@@ -83,11 +75,11 @@ public class Prode {
             if (puntos > maxPuntos) {
                 maxPuntos = puntos;
                 ganador = participante;
-                System.out.println("Puntos obtenidos: " + puntos);
+                System.out.println("Ganador: "+ ganador +" Puntos obtenidos: " + puntos);
             }
         }
 
-        return  ganador;
+        return  "Ganador: "+ ganador +" Puntos obtenidos: " + maxPuntos;
     }
 
     @Override
