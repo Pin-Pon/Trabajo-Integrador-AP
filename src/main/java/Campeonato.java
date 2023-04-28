@@ -7,22 +7,5 @@ public class Campeonato {
     public Campeonato(){
         listaDePartidos = new ArrayList<>();
     }
-    public void agregarPartido(Partido nuevo){
-        listaDePartidos.add(nuevo);
-    }
 
-
-
-
-    public int cantidadFechas(){
-        return listaDePartidos.size();
-
-    }
-
-    @Override
-    public String toString() {
-        return "Campeonato{" +
-                "listaDePartidos=" + listaDePartidos +
-                '}';
-    }
 }

@@ -1,7 +1,4 @@
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,10 +65,10 @@ public class Partido {
 
     @Override
     public String toString() {
-        return "Partido: \n" +
-                "Equipo Local: " + equipoLocal + '\n' +
-                "Equipo Visitante: " + equipoVisitante + '\n' +
-                "*******************************************" + '\n' +
+        return "*******PARTIDO******* \n" +
+                "Equipo Local: " + equipoLocal + " | " +
+                "Equipo Visitante: " + equipoVisitante + '\n'+
+                + '\n' +
                 "Resultado: " + resultado + '\n' +
                 "Fecha: " + fecha +'\n' ;
     }
