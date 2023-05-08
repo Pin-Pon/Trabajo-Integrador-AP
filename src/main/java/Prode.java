@@ -28,35 +28,24 @@ public class Prode {
         for (Participante participante : this.participantes) {
             int puntos = 0;
             String nom = participante.getNombre();
-            //       int fechasPuntos = participante.getFecha();
-            //       rondaParticipante.put(nom, fechasPuntos);
-            //System.out.println("Resultados para " + nom + ":");
-            //Recorro el mapa de resultados
             for (Map.Entry<Partido, Pronosticos> entry : resultados.entrySet()) {
                 Partido partido = entry.getKey();
                 Pronosticos pronosticos = entry.getValue();
                 // Comparo los resultados
-                if (partido.getResultado() == participante.getMi_pronostico()) {
-                    if (participante.getFecha() == (partido.getFecha()))
+                rondaParticipante.put(nom, puntos);
+                if (pronosticos  == participante.getMi_pronostico()) {
+                    if (participante.getFecha() == (partido.getFecha())) {
                         puntos++;
-                    //Buscar en el mapa... el participante por nombre, obtener el valor y sumar uno
-                    rondaParticipante.put(nom, puntos);
-     //               for (Map.Entry<String, Integer> entry3 : rondaParticipante.entrySet()) {
-      //                  System.out.println(entry3);
-
                     }
                 }
-                // return "Nombre del participante " + nom + ":" + "puntos obtenidos: " + puntos;
-           //     System.out.println("Puntos obtenidos por " + nom + ": " + puntos);
             }
+                }
         for (Map.Entry<String, Integer> entry3 : rondaParticipante.entrySet()) {
-            System.out.println(entry3.getKey()+entry3.getValue());
+            System.out.println("El Participante: " + entry3.getKey() + " Obtuvo: " + entry3.getValue() + "puntos");
         }
-        }
-
-
-
-
+            }
+     //   for (Map.Entry<String, Integer> entry3 : rondaParticipante.entrySet()) {
+       //     System.out.println(entry3.getKey() + entry3.getValue());
     public String obtenerGanador() {
         Participante ganador = null;
         int maxPuntos = Integer.MIN_VALUE;
@@ -67,7 +56,7 @@ public class Prode {
             for (Map.Entry<Partido, Pronosticos> entry : resultados.entrySet()) {
                 Partido partido = entry.getKey();
                 Pronosticos pronosticos = entry.getValue();
-                if (partido.getResultado() == participante.getMi_pronostico()) {
+                if (pronosticos == participante.getMi_pronostico()) {
                     if (participante.getFecha() == (partido.getFecha()))
                         puntos++;
 
@@ -77,12 +66,12 @@ public class Prode {
             if (puntos > maxPuntos) {
                 maxPuntos = puntos;
                 ganador = participante;
-                System.out.println("Ganador: " + ganador + " Puntos obtenidos: " + puntos);
+                System.out.println("Ganador: \n" + ganador + " Puntos obtenidos: " + puntos);
             }
         }
-        // return "Ganador: " + ganador + " Puntos obtenidos: " + maxPuntos;
+        return "Ganador: " + ganador + " Puntos obtenidos: " + maxPuntos;
 
-        return null;
+
     }
 
     @Override

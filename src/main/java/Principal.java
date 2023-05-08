@@ -57,7 +57,7 @@ public class Principal {
         }
         sc2.close();
         prodeNuevo.mostrarResultados();
-        System.out.println(prodeNuevo.obtenerGanador());
+        //System.out.println(prodeNuevo.obtenerGanador());
 
     }
 }
